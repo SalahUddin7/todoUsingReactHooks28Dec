@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ListItem(todo, id) {
+export default function ListItem({ todo, id }) {
   return (
     <li>
       <label htmlFor="{id}">
