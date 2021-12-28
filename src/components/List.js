@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ListItem from './ListItem';
+import { DataContext } from './DataProvider';
 
 export default function List() {
+  const [todos, setTodos] = useContext(DataContext);
+
   return (
     <ul>
-      <ListItem />
-      <ListItem />
-      <ListItem />
+      {todos.map((todo, index) => (
+        <ListItem todo={todo} key={index} id={index} />
+      ))}
     </ul>
   );
 }

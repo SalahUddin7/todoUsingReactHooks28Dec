@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function ListItem() {
+export default function ListItem(todo, id) {
   return (
     <li>
-      <label htmlFor="">
-        <input type="checkbox" id="" />
-        Cooking To DO (inside listITEM)
+      <label htmlFor="{id}">
+        <input type="checkbox" id={id} />
+        {todo.name}
       </label>
       <button>Edit</button>
     </li>
