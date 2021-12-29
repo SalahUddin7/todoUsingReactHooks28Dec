@@ -1,9 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import { DataContext } from './DataProvider';
 
 export default function FormInput() {
   const [todos, setTodos] = useContext(DataContext);
   const [todoName, setTodoName] = useState('');
+  const todoInput = useRef();
 
   const addTodo = (e) => {
     e.preventDefault();
@@ -18,7 +19,7 @@ export default function FormInput() {
         name="todos"
         id="todos"
         required
-        placeholder=" What item do you need?"
+        placeholder=" Type here. . . . . . . . . . . . ."
         value={todoName}
         onChange={(e) => setTodoName(e.target.value.toLowerCase())}
       />

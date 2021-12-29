@@ -35,7 +35,10 @@ export default function Footer() {
         />
         ALL
       </label>
-      <p>You have {todos.length} items in your shoping list</p>
+      <p>
+        You have {todos.filter((todo) => todo.complete === false).length} items
+        in your shoping list
+      </p>
       <button id="delete" onClick={deleteTodo}>
         Delete
       </button>
