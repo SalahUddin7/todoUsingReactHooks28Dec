@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FormInput from './components/FormInput';
 import List from './components/List';
 import Footer from './components/Footer';
 import { DataProvider } from './components/DataProvider';
 
 function App() {
+  const [allData, setAllData] = useState([]);
+  const allDataHandlers = (data) => {
+    setAllData(data);
+  };
+
   return (
     <DataProvider>
       <div className="App">
-        <h1>Shoping List /To Do List</h1>
+        <h1>Shopping List /To Do List</h1>
         <h4>
           What item do you need? Please make a Digital List by Using this form.
         </h4>
@@ -17,8 +22,8 @@ function App() {
           to seperate Price of the Product <br></br>
         </h4>
 
-        <FormInput />
-        <List />
+        <FormInput allDataHandlers={allDataHandlers} />
+        <List allData={allData} />
         <Footer />
       </div>
     </DataProvider>

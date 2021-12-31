@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import ListItem from './ListItem';
 import { DataContext } from './DataProvider';
 
-export default function List() {
+export default function List(props) {
   const [todos, setTodos] = useContext(DataContext);
 
   const switchComplete = (id) => {
